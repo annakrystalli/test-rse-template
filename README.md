@@ -32,6 +32,39 @@ It allows me to use:
 
 Also, because slides are in the content, they are indexed by the Hugo learn theme so searchable!
 
+# Using the Template
+
+## Software requirements
+
+You will need [Go](https://golang.org/doc/install) (> 1.12) and [Hugo](https://gohugo.io/getting-started/installing/) installed.
+
+## Creating a new course material wesite
+
+- Make copy of template
+- Edit `config.toml` providing details like workshop title, description, authors and urls to the GitHub repository
+- Build static pages with `hugo -D`
+    - if you encounter any errors for example, regarding missing shortcodes, you made need to clean your module cache with `hugo mod clean`
+- Serve site locally `hugo server -D`
+    * Navigate to <http://localhost:1313/> to view
+
+## Creating a new file
+
+To create a new file use the `hugo new` command
+
+```
+hugo new hugo new 01-getting-started/introduction.md
+```
+
+To use one of the archetypes, for example to create a new chapter, use the flag `--kind`:
+
+```
+hugo new --kind chapter 02-r-rstudio/_index.md
+```
+
+
+## Include slides in a chapter
+
+To include reveal.js slides in a chapter, ensure the header YAML in the chapter `index.md` file includes `slides: true`
 
 ## Credits
 
